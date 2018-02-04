@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.plexapp.agents.altmovieposters</string>
+	<key>PlexAgentAttributionText</key>
+	<string>&lt;center&gt;This agent finds movie posters from &lt;a href=&quot;http://www.alternativemovieposters.com/&quot;&gt;www.alternativemovieposters.com&lt;/a&gt;&lt;/center&gt; &lt;br /&gt;
+		Like a poster that you see?
+		&lt;br /&gt;
+		Then make sure to go to the main website to find out who made it!</string>
+	<key>PlexFrameworkVersion</key>
+	<string>2</string>
+	<key>PlexPluginClass</key>
+	<string>Agent</string>
+	<key>PlexPluginCodePolicy</key>
+    <string>Elevated</string>
+</dict>
+</plist>
