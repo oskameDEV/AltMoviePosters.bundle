@@ -20,7 +20,7 @@ def Start():
 
 ####################################################################################################
 
-class MoviepilotAgent(Agent.Movies):
+class AltMoviePostersAgent(Agent.Movies):
 	name = 'AltMoviePosters'
 	languages = [Locale.Language.NoLanguage]
 	primary_provider = False
