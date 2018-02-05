@@ -21,7 +21,6 @@ def Start():
 
 ####################################################################################################
 
-<<<<<<< HEAD
 # :: MOVIES AGENT
 class AltMoviePostersAgentMovies(Agent.Movies):
 	name = 'AltMoviePosters (MOVIES)'
@@ -41,10 +40,6 @@ class AltMoviePostersAgentMovies(Agent.Movies):
 # :: TV AGENT
 class AltMoviePostersAgentTV(Agent.TV_Shows):
 	name = 'AltMoviePosters (TV)'
-=======
-class AltMoviePostersAgent(Agent.Movies):
-	name = 'AltMoviePosters'
->>>>>>> 94379f406f8d0d759cdc96b4a144d4a955aadcdd
 	languages = [Locale.Language.NoLanguage]
 	primary_provider = False
 
