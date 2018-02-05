@@ -5,10 +5,16 @@
 	<key>CFBundleIdentifier</key>
 	<string>com.plexapp.agents.altmovieposters</string>
 	<key>PlexAgentAttributionText</key>
-	<string>&lt;center&gt;This agent finds movie posters from &lt;a href=&quot;http://www.alternativemovieposters.com/&quot;&gt;www.alternativemovieposters.com&lt;/a&gt;&lt;/center&gt; &lt;br /&gt;
-		Like a poster that you see?
+	<string>
+		&lt;center&gt;THIS AGENT FINDS MOVIE POSTERS FROM
+		&lt;a href=&quot;http://www.alternativemovieposters.com/&quot;&gt;WWW.ALTERNATIVEMOVIEPOSTERS.COM&lt;/a&gt;
 		&lt;br /&gt;
-		Then make sure to go to the main website to find out who made it!</string>
+		&lt;br /&gt;
+		LIKE ANY OF THE ARTWORK IN THE POSTER RESULTS?
+		&lt;br /&gt;
+		GO TO THE AMP SITE TO FIND OUT WHO MADE IT!
+		&lt;/center&gt;
+	</string>
 	<key>PlexFrameworkVersion</key>
 	<string>2</string>
 	<key>PlexPluginClass</key>

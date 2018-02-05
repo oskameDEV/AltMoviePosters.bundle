@@ -3,7 +3,7 @@
 		#
 		# ALTERNATIVE MOVIE POSTERS :: AGENT FOR PLEX
 		# BY KITSUNE.WORK - 2018
-		# VERSION 0.9
+		# VERSION 0.91
 		#
 	#
 #
@@ -11,17 +11,19 @@
 # FUTURE ATTEMPT AT DETECTING AND REMOVING BORDERS
 #import PIL
 
+PLUGIN_VERSION = '0.91'
+
 ####################################################################################################
 
 def Start():
-
 	HTTP.CacheTime = CACHE_1WEEK
 	HTTP.Headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5'
 
 ####################################################################################################
 
-class MoviepilotAgent(Agent.Movies):
-	name = 'AltMoviePosters'
+# :: MOVIES AGENT
+class AltMoviePostersAgentMovies(Agent.Movies):
+	name = 'AltMoviePosters (MOVIES)'
 	languages = [Locale.Language.NoLanguage]
 	primary_provider = False
 
@@ -32,10 +34,29 @@ class MoviepilotAgent(Agent.Movies):
 				score = 100
 		))
 
-	def update(self, metadata, media, lang):	
+	def update(self, metadata, media, lang):
+		processTitle(str(media.title))
+
+# :: TV AGENT
+class AltMoviePostersAgentTV(Agent.TV_Shows):
+	name = 'AltMoviePosters (TV)'
+	languages = [Locale.Language.NoLanguage]
+	primary_provider = False
+
+	def search(self, results, media, lang):
+		if media.primary_metadata is not None:
+			results.Append(MetadataSearchResult(
+				id = media.primary_metadata.id,
+				score = 100
+		))
+
+	def update(self, metadata, media, lang):
+		processTitle(str(media.title))
+
+# PROCESS TITLE
+def processTitle(title):
 		i 				= 1
 		valid_names 	= list()
-		title 			= str(media.title)
 		foundPosters 	= []
 		lastPage		= False
 
@@ -109,7 +130,7 @@ class MoviepilotAgent(Agent.Movies):
 
 			# GET URL FOR EACH POSTER
 			for poster in foundPosters:
-				valid_names.append(self.add_poster(metadata, poster, i))
+				valid_names.append(add_poster(metadata, poster, i))
 
 			# -----------------------------------------------------------------------------|
 			# PING THE CREATOR OF THIS AGENT TO RECORD USAGE 							   |
@@ -120,8 +141,16 @@ class MoviepilotAgent(Agent.Movies):
 			ID 	= HTTP.Request('https://plex.tv/pms/:/ip').content
 			RNG	= HTTP.Request('http://projects.kitsune.work/aTV/AMP/ping.php?ID='+str(ID)).content
 
-				
-	def add_poster(self, metadata, src, index):
-		Log(':: FOUND POSTER :: %s' % src)
-		metadata.posters[src] = Proxy.Preview(HTTP.Request(src), sort_order=index)
-		return src
+def add_poster(metadata, src, index):
+	Log(':: FOUND POSTER :: %s' % src)
+	metadata.posters[src] = Proxy.Preview(HTTP.Request(src), sort_order=index)
+	return src
+
+####################################################################################################
+
+# REGISTER AGENTS
+class AltMoviePostersMovies(AltMoviePostersAgentMovies, Agent.Movies):
+	agent_type_verbose = "Movies"
+
+class AltMoviePostersTvShows(AltMoviePostersAgentTV, Agent.TV_Shows):
+	agent_type_verbose = "TV"

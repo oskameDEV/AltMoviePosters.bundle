@@ -1,7 +1,7 @@
 # AltMoviePosters.bundle
 A Plex agent that finds posters from alternativemovieposters.com 
 Note the followings issues
-- Searches can only be based on the movie's title, sometimes that results in the wrong posters in the results
+- Searches can only be based on movie title, sometimes that results in the wrong posters in the results
 - Some posters have borders, which the agent can't cut off (if anyone has an idea how let me know)  
   
 **Installation Instructions**  
