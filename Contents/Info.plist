@@ -9,12 +9,16 @@
 		&lt;center&gt;THIS AGENT FINDS MOVIE POSTERS FROM
 		&lt;a href=&quot;http://www.alternativemovieposters.com/&quot;&gt;WWW.ALTERNATIVEMOVIEPOSTERS.COM&lt;/a&gt;
 		&lt;br /&gt;
+<<<<<<< HEAD
 		&lt;br /&gt;
 		LIKE ANY OF THE ARTWORK IN THE POSTER RESULTS?
 		&lt;br /&gt;
 		GO TO THE AMP SITE TO FIND OUT WHO MADE IT!
 		&lt;/center&gt;
 	</string>
+=======
+		Make sure to go to the main website to find out who made it!</string>
+>>>>>>> 94379f406f8d0d759cdc96b4a144d4a955aadcdd
 	<key>PlexFrameworkVersion</key>
 	<string>2</string>
 	<key>PlexPluginClass</key>
