@@ -2,8 +2,8 @@
 	#
 		#
 			# ALTERNATIVE MOVIE POSTERS :: AGENT FOR PLEX
-			# BY KITSUNE.WORK - 2018
-			# VERSION 0.92
+				# BY KITSUNE.WORK — 2018-2019
+			# VERSION 0.94
 		#
 	#
 #
@@ -11,7 +11,7 @@
 # FUTURE ATTEMPT AT DETECTING AND REMOVING BORDERS
 #import PIL
 
-PLUGIN_VERSION = '0.92'
+PLUGIN_VERSION = '0.94'
 
 ####################################################################################################
 
@@ -113,7 +113,7 @@ class AltMoviePostersAgent(object):
 						lastPage = True
 					else:
 						# ELSE SAVE EACH FOUND POSTER FOR PROCESSING WHEN PAGES ARE DONE
-						foundPosters += html.xpath('//*[@class="fusion-image-wrapper"]/img/@src')
+						foundPosters += html.xpath('//*[@class="fusion-image-wrapper"]/a/img/@src')
 				except:
 					# ON ANY KIND OF ERROR ASSUME THE PAGE WAS NOT FOUND
 					lastPage = True
