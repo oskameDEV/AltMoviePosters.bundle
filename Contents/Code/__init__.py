@@ -11,21 +11,13 @@
 # FUTURE ATTEMPT AT DETECTING AND REMOVING BORDERS
 #import PIL
 
-PLUGIN_VERSION = '0.94'
+PLUGIN_VERSION = '0.95'
 
 ####################################################################################################
 
 def Start():
 	HTTP.CacheTime = CACHE_1WEEK
 	HTTP.Headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5'
-	# -----------------------------------------------------------------------------|
-	# PING THE CREATOR OF THIS AGENT TO RECORD USAGE 							   |
-	# NOTHING CREEPY, JUST WANT TO KNOW HOW MUCH TIME TO INVEST 				   |
-	# BASED ON HOW MANY PEOPLE USE MY WORK 										   |
-	# I HAVE TO USE SOME KIND OF UNIQUE IDENTIFIER TO MAKE SURE STATS ARE ACCURATE |
-	# -----------------------------------------------------------------------------|
-	ID 	= HTTP.Request('https://plex.tv/pms/:/ip').content
-	RNG	= HTTP.Request('http://projects.kitsune.work/aTV/AMP/ping.php?ID='+str(ID)).content
 
 ####################################################################################################
 
@@ -56,7 +48,7 @@ class AltMoviePostersAgent(object):
 		foundPosters 	= []
 		lastPage		= False
 
-		# CLEAN UP ACCENTS FROM TITLE FOR BETTER SEARCH RESULTS 
+		# CLEAN UP ACCENTS FROM TITLE FOR BETTER SEARCH RESULTS
 		title = title.replace('à', 'a')
 		title = title.replace('á', 'a')
 		title = title.replace('â', 'a')
